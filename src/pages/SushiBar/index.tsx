@@ -7,7 +7,7 @@ import APRCard from './APRCard'
 import StakeCard from './StakeCard'
 import BalanceCard from './BalanceCard'
 import { ChainId } from 'quest-switchswap-sdk'
-import { SUSHI, XSUSHI } from '../../constants'
+import { SUSHI, XSUSHI,RADIO,XSHACK } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 
 const mockData = {
@@ -18,13 +18,15 @@ const mockData = {
 export default function XSushi() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
-    const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
+    // const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    // const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
+    const sushiBalance = useTokenBalance(RADIO[ChainId.MATIC]?.address ?? '')
+    const xSushiBalance = useTokenBalance(XSHACK?.address ?? '')
 
     return (
         <>
             <Helmet>
-                <title>xSUSHI | Radioshack</title>
+                <title>xSHACK | Radioshack</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
                 <div className="flex mb-6 justify-center">

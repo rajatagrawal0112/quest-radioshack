@@ -1,7 +1,7 @@
 import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from 'quest-switchswap-sdk'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import { useMemo } from 'react'
-import { DAI, SUSHI, USDC, USDT, WBTC } from '../../constants'
+import { DAI, SUSHI, USDC, USDT, WBTC ,RADIO} from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
@@ -90,7 +90,8 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
         [chainId, pairToFilterBy]
     )
 
-    const uni = chainId ? SUSHI[chainId] : undefined
+    const uni = chainId ? RADIO[chainId] : undefined 
+
 
     const rewardsAddresses = useMemo(() => info.map(({ stakingRewardAddress }) => stakingRewardAddress), [info])
 
@@ -229,7 +230,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
 
 export function useTotalUniEarned(): TokenAmount | undefined {
     const { chainId } = useActiveWeb3React()
-    const uni = chainId ? SUSHI[chainId] : undefined
+    const uni = chainId ? RADIO[chainId] : undefined
     const stakingInfos = useStakingInfo()
 
     return useMemo(() => {

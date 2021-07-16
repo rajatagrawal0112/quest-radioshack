@@ -48,6 +48,16 @@ export const SUSHI: ChainTokenMap = {
     [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'SushiToken'),
     [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC', 18, 'SUSHI', 'SushiToken')
 }
+export const RADIO: ChainTokenMap = {
+    [ChainId.MATIC]: new Token(
+        ChainId.MATIC,
+        '0x52B8E9296B3c605eA7e9ecF1d201254bc9D55F54',
+        18,
+        'RADIO',
+        'RadioToken'
+    )
+}
+
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
     // [UNI_ADDRESS]: 'UNI',
@@ -134,6 +144,7 @@ export const MATIC: { [key: string]: Token } = {
     USDT: new Token(ChainId.MATIC, '0xc2132D05D31c914a87C6611C10748AEb04B58e8F', 6, 'USDT', 'Tether USD'),
     TEL: new Token(ChainId.MATIC, '0xdF7837DE1F2Fa4631D716CF2502f8b230F1dcc32', 2, 'TEL', 'Telcoin'),
     SUSHI: new Token(ChainId.MATIC, '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', 18, 'SUSHI', 'SushiToken'),
+    RADIO: new Token(ChainId.MATIC, '0x52B8E9296B3c605eA7e9ecF1d201254bc9D55F54',18, 'RADIO', 'RadioToken'),
     AAVE: new Token(ChainId.MATIC, '0xD6DF932A45C0f255f85145f286eA0b292B21C90B', 18, 'AAVE', 'Aave'),
     FRAX: new Token(ChainId.MATIC, '0x104592a158490a9228070E0A8e5343B499e125D0', 18, 'FRAX', 'Frax'),
     FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share')
@@ -220,6 +231,7 @@ export const XSUSHI_CALL = new Token(
 )
 
 export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')
+export const XSHACK = new Token(ChainId.MATIC, '0xbea6Aff7067D1dB51145039c6484a9b670C705aD', 18, 'xSHACK', 'RadioBar')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
     ChainId.MAINNET,
